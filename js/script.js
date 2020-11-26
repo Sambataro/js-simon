@@ -14,11 +14,23 @@ $(document).ready(
       arrayNumber.push(generateNumber);
     }
     alert(arrayNumber);
+
+    // chiedo all'utente di riscriviere i numeri con un  prompt
+    var arrayUserNumber = [];
+    setTimeout(function() {
+      alert("reinserisci i numeri appena visti")
+     for (var i = 0; i < 5; i++) {
+     var userNumber = parseInt(prompt("inserisci un numero"));
+     arrayUserNumber.push(userNumber);
+     }
+    }, 3000);
+
+    console.log(arrayUserNumber);
+
   }
-  function
 );
 
 // Function-----------------------------------------<
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
-}
+};
