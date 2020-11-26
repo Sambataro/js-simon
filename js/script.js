@@ -16,16 +16,25 @@ $(document).ready(
     alert(arrayNumber);
 
     // chiedo all'utente di riscriviere i numeri con un  prompt
-    var arrayUserNumber = [];
+    var correctNumber = [];
     setTimeout(function() {
       alert("reinserisci i numeri appena visti")
      for (var i = 0; i < 5; i++) {
-     var userNumber = parseInt(prompt("inserisci un numero"));
-     arrayUserNumber.push(userNumber);
-     }
+       var userNumber = parseInt(prompt("inserisci un numero"));
+       if (controlArray(arrayNumber, userNumber)) {
+         correctNumber.push(userNumber);
+        }
+      }
+     alert("il tuo punteggio è " + correctNumber.length + " su 5");
+     if (correctNumber.length > 0) {
+     alert("questi sono i numeri che hai ricordato " + correctNumber)
+   } else {
+     alert("non hai inserito nessun numero corretto")
+   }
     }, 3000);
 
-    console.log(arrayUserNumber);
+    console.log(correctNumber);
+
 
   }
 );
@@ -33,4 +42,15 @@ $(document).ready(
 // Function-----------------------------------------<
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
-};
+}
+
+
+function controlArray (array, element) {
+  var found = false;
+  for (var i = 0; i < array.length; i++) {
+    if (element == array[i]) {
+      return found = true;
+    }
+  }
+  return found;
+}
