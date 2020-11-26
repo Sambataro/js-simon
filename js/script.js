@@ -15,6 +15,22 @@ $(document).ready(
     }
     alert(arrayNumber);
 
+
+    var timer = 30;
+    var countdown = setInterval(function() {
+      if (timer == - 1) {
+        clearInterval(countdown);
+      } else {
+        $(".container").text(timer);
+        timer = timer - 1;
+      }
+
+    }, 1000);
+
+
+
+
+
     // chiedo all'utente di riscriviere i numeri con un  prompt
     var correctNumber = [];
     setTimeout(function() {
@@ -31,7 +47,7 @@ $(document).ready(
    } else {
      alert("non hai inserito nessun numero corretto")
    }
-    }, 3000);
+ }, 32000);
 
     console.log(correctNumber);
 
